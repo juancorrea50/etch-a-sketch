@@ -1,0 +1,19 @@
+#page{
+    display:flex;
+    flex-direction: column;
+    height: 980px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.container{
+    background-color: grey;
+    display:flex;
+    height: auto;
+    width: 800px;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
