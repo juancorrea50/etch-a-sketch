@@ -13,10 +13,10 @@ function createGrid(){
         for(y=0;y<(userHeight);y++){
             //Divs created in memory and appended at the end of the for loop
             const divs = document.createElement('div');
-            divs.style.cssText = 'height: 5px; width: 5px; margin: 3px; background: red;';
+            divs.style.cssText = 'background-color: black;';
             
-            container.style.height = `${userHeight*11}px`;
-            container.style.width = `${userWidth*11}px`;
+            divs.style.height = `${800/userHeight}px`;
+            divs.style.width = `${800/userWidth}px`;
 
             // *Hover effect*
             //Mouse enter
@@ -24,7 +24,7 @@ function createGrid(){
                  e.target.style.backgroundColor = "white";
         
                 setTimeout(() => {
-                    e.target.style.backgroundColor="red";
+                    e.target.style.backgroundColor="black";
                 }, 500);
             })
              //Mouse over
@@ -32,7 +32,7 @@ function createGrid(){
                 e.target.style.backgroundColor = "white";
         
                 setTimeout(() => {
-                    e.target.style.backgroundColor = "red";
+                    e.target.style.backgroundColor = "black";
                 }, 500);
             });
 
@@ -43,7 +43,7 @@ function createGrid(){
      }
 }
 
-//initialize grid 16x16
+//initialize grid to 16x16
 createGrid();
 
 //Create new grid
