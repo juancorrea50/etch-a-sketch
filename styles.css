@@ -1,11 +1,11 @@
 #page{
     display:flex;
     flex-direction: column;
-    height: 980px;
+    height: auto;
     width: auto;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: aqua;
 }
 .content-container{
     display: flex;
@@ -41,15 +41,27 @@ h1{
     font-size: 100px;
     margin: 0px;
     margin-left: 10px;
-    text-shadow: 10px 10px 15px grey;
+    text-shadow: 10px 10px 15px rgba(0, 140, 255, 0.781);
 }
 .container{
     display:flex;
-    height: 800px;
-    width: 800px;
+    height: 700px;
+    width: 700px;
     flex-wrap: wrap;
     margin: 20px;
     justify-content: center;
     align-items: center;
     box-shadow: 10px 10px 5px grey;
+}
+footer{
+    display: flex;
+    background-color: lightblue;
+    height: 4.2em;
+    width: 95.5em;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 20px;
+    font-family: 'Roboto';
+    margin-top: 20px;
 }

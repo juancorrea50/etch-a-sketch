@@ -5,6 +5,10 @@ const container = document.querySelector('.container');
 const gridBtn = document.querySelector('.grid-dimensions');
 const rainbowButton = document.querySelector('.rainbow');
 
+function makeColor(){
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return '#' + randomColor;
+}
 
 //Creates a basic grid
 function createGrid(){
@@ -15,8 +19,8 @@ function createGrid(){
             const divs = document.createElement('div');
             divs.style.cssText = 'background-color: white;';
             
-            divs.style.height = `${800/userHeight}px`;
-            divs.style.width = `${800/userWidth}px`;
+            divs.style.height = `${700/userHeight}px`;
+            divs.style.width = `${700/userWidth}px`;
 
             // *Hover effect*
             //Mouse enter
@@ -52,13 +56,11 @@ function createRainbowGrid(){
             const divs = document.createElement('div');
             divs.style.cssText = 'background-color: white;';
            
-            divs.style.height = `${800/userHeight}px`;
-            divs.style.width = `${800/userWidth}px`;
-            //Random Color logic
-            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            divs.style.height = `${700/userHeight}px`;
+            divs.style.width = `${700/userWidth}px`;
 
             divs.addEventListener("mouseenter", (e) =>{
-                e.target.style.backgroundColor = '#' + randomColor;
+                e.target.style.backgroundColor = makeColor();
        
                setTimeout(() => {
                    e.target.style.backgroundColor="white";
@@ -66,7 +68,7 @@ function createRainbowGrid(){
             })
 
             divs.addEventListener("mouseover", (e)=> {
-               e.target.style.backgroundColor = '#' + randomColor;
+               e.target.style.backgroundColor = makeColor();
        
                setTimeout(() => {
                    e.target.style.backgroundColor = "white";
@@ -92,12 +94,12 @@ gridBtn.addEventListener('click', () =>{
     do{
        
         userHeight = prompt("Choose the height of the grid(under 100)", 0);
-    }while(userHeight>100 || userHeight===0 || typeof userHeight !== 'number');
+    }while(userHeight>100 || userHeight===0 || typeof parseInt(userHeight) !== 'number');
 
     do{
        
         userWidth =prompt("Choose the width of the grid(under 100)", 0);
-    }while(userWidth> 100 || userWidth===0 || typeof userWidth !== 'number');
+    }while(userWidth> 100 || userWidth===0 || typeof parseInt(userWidth) !== 'number');
 
     //Create new grid elements
     createGrid();
@@ -109,4 +111,18 @@ rainbowButton.addEventListener('click', () => {
         container.removeChild(container.firstChild);
     }
     createRainbowGrid();
+});
+//Rainbow Effect for rainbow button
+rainbowButton.addEventListener('mouseenter', (e) =>{
+    e.target.style.backgroundColor = makeColor();
+    e.target.style.color = makeColor();
+    e.target.style.borderColor = makeColor();
+
+    setTimeout(() => {
+        e.target.style.backgroundColor = "";
+    },500);
+});
+rainbowButton.addEventListener('mouseover', (e) =>{
+    e.style.backgroundColor = makeColor();
+    e.style.color = makeColor();
 });
